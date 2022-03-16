@@ -95,7 +95,10 @@ function addPagination(list){
 linkList.addEventListener('click', (event)=>{
    const target = event.target;
    if(target.tagName === "BUTTON"){
-      linkList.firstElementChild.firstElementChild.className= '';
+      let btn =linkList.querySelectorAll('button');
+      for(item of btn){
+         item.className='';
+      }
       target.className = 'active';
       showPage(data, target.textContent)
 
